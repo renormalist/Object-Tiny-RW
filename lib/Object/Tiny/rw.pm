@@ -59,6 +59,9 @@ Object::Tiny::rw - Class building as simple as it gets (with rw accessors)
 This module is a fork of Object::Tiny which also accepts
 arguments to it's accessors which set the according value.
 
+See http://use.perl.org/comments.pl?sid=36814&cid=57866 for
+the motivation.
+
 Please see L<Object::Tiny|Object::Tiny> for all the original ideas.
 
 To use Object::Tiny::rw, just call it with a list of accessors to be

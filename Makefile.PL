@@ -7,8 +7,8 @@ BEGIN {
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-	NAME      => 'Object::Tiny',
-	ABSTRACT  => 'A date object with as little code as possible',
+	NAME      => 'Object::Tiny::rw',
+	ABSTRACT  => 'A date object with as little code as possible (and rw accessors)',
 	VERSION   => $VERSION,
 	PREREQ_PM => {
 		# Skip on Windows to avoid breaking ActivePerl PPMs
@@ -16,7 +16,7 @@ WriteMakefile(
 		($^O eq 'MSWin32' ? () : ('Test::More' => '0.47')),
 	},
 	($] >= 5.005 ? (
-		AUTHOR  => 'Adam Kennedy <adamk@cpan.org>',
+		AUTHOR  => 'Adam Kennedy <adamk@cpan.org>, ::rw fork by Steffen Schwigon',
 	) : ()),
 	($ExtUtils::MakeMaker::VERSION ge '6.30_00' ? (
 		LICENSE => 'perl',

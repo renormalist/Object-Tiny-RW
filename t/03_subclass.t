@@ -23,7 +23,7 @@ SCOPE: {
 
 	\@Foo::ISA = 'Bar';
 
-	use Object::Tiny qw{ foo bar };
+	use Object::Tiny::rw qw{ foo bar };
 	";
 	ok( ! $@, 'Created package without error' );
 }
@@ -33,7 +33,7 @@ SCOPE: {
 	my $empty = Foo->new;
 	isa_ok( $empty, 'Foo' );
 	isa_ok( $empty, 'Bar' );
-	ok( ! $empty->isa('Object::Tiny'), 'Is not an Object::Tiny' );
+	ok( ! $empty->isa('Object::Tiny::rw'), 'Is not an Object::Tiny::rw' );
 	is( scalar( keys %$empty ), 0, 'Empty object is empty' );
 }
 
