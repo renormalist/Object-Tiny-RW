@@ -50,17 +50,14 @@ Object::Tiny::RW - Class building as simple as it gets (with rw accessors)
   # Use the class
   my $object = Foo->new( bar => 1 );
   
-  print "bar is " . $object->bar . "\n"; # 1
+  print "bar is " . $object->bar . "\n";       # 1
   $object->bar(2);
-  print "bar is now " . $object->bar . "\n"; # 2
+  print "bar is now " . $object->bar . "\n";   # 2
 
 =head1 DESCRIPTION
 
-This module is a fork of Object::Tiny which also accepts
-arguments to it's accessors which set the according value.
-
-See http://use.perl.org/comments.pl?sid=36814&cid=57866 for
-the motivation.
+This module is a fork of Object::Tiny. The only difference is that it
+also accepts arguments to it's accessors to set the according value.
 
 Please see L<Object::Tiny|Object::Tiny> for all the original ideas.
 
@@ -73,15 +70,15 @@ created.
 
 Bugs should be reported via the CPAN bug tracker at
 
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Object-Tiny-rw>
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Object-Tiny-RW>
 
 For other issues, contact the author.
 
 =head1 AUTHOR
 
-Adam Kennedy E<lt>adamk@cpan.orgE<gt>
+Adam Kennedy E<lt>adamk@cpan.orgE<gt> for original Object::Tiny.
 
-Object::Tiny::RW fork by Steffen Schwigon E<lt>ss5@renormalist.net<gt>
+Steffen Schwigon E<lt>ss5@renormalist.netE<gt> for the Object::Tiny::RW variant.
 
 =head1 SEE ALSO
 
@@ -90,7 +87,8 @@ L<Config::Tiny>
 =head1 COPYRIGHT
 
 Copyright 2007 - 2008 Adam Kennedy.
-Copyright 2009 Steffen Schwigon
+
+Copyright 2009 Steffen Schwigon.
 
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
