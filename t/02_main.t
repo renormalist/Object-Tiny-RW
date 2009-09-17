@@ -14,7 +14,7 @@ SCOPE: {
 	eval "
 	package Foo;
 
-	use Object::Tiny::rw qw{ foo bar };
+	use Object::Tiny::RW qw{ foo bar };
 	";
 	ok( ! $@, 'Created package without error' );
 }
@@ -23,7 +23,7 @@ SCOPE: {
 SCOPE: {
 	my $empty = Foo->new;
 	isa_ok( $empty, 'Foo' );
-	isa_ok( $empty, 'Object::Tiny::rw' );
+	isa_ok( $empty, 'Object::Tiny::RW' );
 	is( scalar( keys %$empty ), 0, 'Empty object is empty' );
 }
 
@@ -31,7 +31,7 @@ SCOPE: {
 SCOPE: {
 	my $object = Foo->new( foo => 1, bar => 2, baz => 3 );
 	isa_ok( $object, 'Foo' );
-	isa_ok( $object, 'Object::Tiny::rw' );
+	isa_ok( $object, 'Object::Tiny::RW' );
 	is( scalar( keys %$object ), 3, 'Object contains expect elements' );
 	is( $object->foo, 1, '->foo ok' );
 	is( $object->bar, 2, '->bar ok' );
@@ -46,6 +46,6 @@ SCOPE: {
 
 # Trigger the constructor exception
 SCOPE: {
-	eval "package Bar; use Object::Tiny::rw 'bad thing';";
+	eval "package Bar; use Object::Tiny::RW 'bad thing';";
 	ok( $@ =~ /Invalid accessor name/, 'Got expected error' );
 }

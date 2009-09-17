@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Compile-testing for Object::Tiny::rw
+# Compile-testing for Object::Tiny::RW
 
 use strict;
 BEGIN {
@@ -12,4 +12,4 @@ use Test::More tests => 2;
 
 ok( $] >= 5.004, 'Perl version is 5.004 or newer' );
 
-require_ok( 'Object::Tiny::rw' );
+require_ok( 'Object::Tiny::RW' );

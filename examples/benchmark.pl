@@ -4,7 +4,7 @@ BEGIN {
     $DB::single = 1;
 }
 
-use Object::Tiny::rw      ();
+use Object::Tiny::RW      ();
 use Class::Accessor::Fast ();
 use Foo_Bar_Accessor      ();
 use Foo_Bar_Accessor2     ();

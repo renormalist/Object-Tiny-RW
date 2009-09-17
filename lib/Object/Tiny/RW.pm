@@ -1,18 +1,18 @@
-package Object::Tiny::rw;
+package Object::Tiny::RW;
 
 use strict 'vars', 'subs';
 BEGIN {
 	require 5.004;
-	$Object::Tiny::rw::VERSION = '1.06';
+	$Object::Tiny::RW::VERSION = '1.06';
 }
 
 sub import {
-	return unless shift eq 'Object::Tiny::rw';
+	return unless shift eq 'Object::Tiny::RW';
 	my $pkg   = caller;
 	my $child = !! @{"${pkg}::ISA"};
 	eval join "\n",
 		"package $pkg;",
-		($child ? () : "\@${pkg}::ISA = 'Object::Tiny::rw';"),
+		($child ? () : "\@${pkg}::ISA = 'Object::Tiny::RW';"),
 		map {
 			defined and ! ref and /^[^\W\d]\w*$/s
 			or die "Invalid accessor name '$_'";
@@ -35,14 +35,14 @@ __END__
 
 =head1 NAME
 
-Object::Tiny::rw - Class building as simple as it gets (with rw accessors)
+Object::Tiny::RW - Class building as simple as it gets (with rw accessors)
 
 =head1 SYNOPSIS
 
   # Define a class
   package Foo;
   
-  use Object::Tiny::rw qw{ bar baz };
+  use Object::Tiny::RW qw{ bar baz };
   
   1;
   
@@ -64,10 +64,10 @@ the motivation.
 
 Please see L<Object::Tiny|Object::Tiny> for all the original ideas.
 
-To use Object::Tiny::rw, just call it with a list of accessors to be
+To use Object::Tiny::RW, just call it with a list of accessors to be
 created.
 
-  use Object::Tiny::rw 'foo', 'bar';
+  use Object::Tiny::RW 'foo', 'bar';
 
 =head1 SUPPORT
 
@@ -80,7 +80,8 @@ For other issues, contact the author.
 =head1 AUTHOR
 
 Adam Kennedy E<lt>adamk@cpan.orgE<gt>
-Object::Tiny::rw fork by Steffen Schwigon E<lt>ss5@renormalist.net<gt>
+
+Object::Tiny::RW fork by Steffen Schwigon E<lt>ss5@renormalist.net<gt>
 
 =head1 SEE ALSO
 
