@@ -16,7 +16,7 @@ sub import {
 		map {
 			defined and ! ref and /^[^\W\d]\w*$/s
 			or die "Invalid accessor name '$_'";
-                        "sub $_ { if (defined \$_[1]) { \$_[0]->{$_} = \$_[1] } ; return \$_[0]->{$_} }\n"
+                        "sub $_ { if (\@_ > 1) { \$_[0]->{$_} = \$_[1] } ; return \$_[0]->{$_} }\n"
 		} @_;
 	die "Failed to generate $pkg" if $@;
 	return 1;

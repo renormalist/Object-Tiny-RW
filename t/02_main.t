@@ -7,7 +7,7 @@ BEGIN {
 	$^W = 1;
 }
 
-use Test::More tests => 13;
+use Test::More tests => 14;
 
 # Define a class
 SCOPE: {
@@ -42,6 +42,8 @@ SCOPE: {
 	is( $object->{baz}, 3, '->{baz} does contain value' );
         $object->foo(42);
 	is( $object->foo, 42, '->foo(new_value) ok' );
+	$object->bar(undef);
+	is( $object->bar, undef, '->bar(new_value) ok' );
 }
 
 # Trigger the constructor exception
