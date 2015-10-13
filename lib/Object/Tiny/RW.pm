@@ -1,6 +1,8 @@
 package Object::Tiny::RW;
 
+use 5.004;
 use strict 'vars', 'subs';
+use warnings;
 BEGIN {
 	require 5.004;
 	$Object::Tiny::RW::VERSION = '1.07';

@@ -10,6 +10,7 @@ WriteMakefile(
 	NAME      => 'Object::Tiny::RW',
 	ABSTRACT  => 'A date object with as little code as possible (and rw accessors)',
 	VERSION   => $VERSION,
+        MIN_PERL_VERSION => "5.004",
 	PREREQ_PM => {
 		# Skip on Windows to avoid breaking ActivePerl PPMs
 		# 0.47 means 5.6.2 or newer, which everyone on Win32 has.
